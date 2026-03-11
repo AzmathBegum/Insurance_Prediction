@@ -15,4 +15,4 @@ class Insurance_Prediction:
         input = np.array([[Age,Annual_Income_LPA,Policy_Term_Years,Sum_Assured_Lakhs]])
         scaled_input = self.scaler.transform(input)
         result=self.model.predict(scaled_input)
-        return float(result[0])
+        return float(np.squeeze(result))
